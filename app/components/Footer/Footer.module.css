@@ -1,0 +1,123 @@
+.footer {
+  background-color: #3f0c35;
+  color: white;
+  padding: 3rem 0 0 0;
+  width: 100%;
+  font-family: "BeVietnamPro";
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 5rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.homeLink {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #eec575;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.homeLink:hover {
+  opacity: 0.8;
+}
+
+/* First section (About) */
+.section:first-child {
+  width: 380px;
+}
+
+/* Middle section (Company) */
+.section:nth-child(2) {
+  width: 320px;
+}
+
+/* Last section (Social) */
+.section:last-child {
+  width: 280px;
+}
+
+.section h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.section p {
+  line-height: 1.6;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.section a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  font-size: 0.9rem;
+}
+
+.section a:hover {
+  opacity: 0.8;
+}
+
+.linkColumns {
+  display: flex;
+  gap: 3rem;
+}
+
+.linkColumns div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  width: fit-content;
+}
+
+.appStores {
+  display: flex;
+  gap: 1rem;
+  width: fit-content;
+}
+
+.copyright {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  background-color: #eec575;
+  color: #3f0c35;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section {
+    text-align: center;
+    width: 100% !important; /* Override all fixed widths on mobile */
+    max-width: 380px; /* Maximum width for better readability */
+  }
+
+  .linkColumns {
+    justify-content: center;
+  }
+
+  .socialLinks,
+  .appStores {
+    margin: 0 auto;
+  }
+}
