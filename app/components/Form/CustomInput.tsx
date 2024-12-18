@@ -16,7 +16,7 @@ import CalendarTodayRoundedIcon from "@mui/icons-material/CalendarTodayRounded";
 import dayjs from "dayjs";
 
 export type CustomInputProps = {
-  type: "text" | "date" | "dropdown" | "file" | "password" | "time";
+  type: "text" | "date" | "dropdown" | "file" | "password" | "time" | "number";
   label: string;
   name: string;
   options?: { value: string; label: string }[];
@@ -71,7 +71,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
           case "time":
             return (
               <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <div className="flex flex-col gap-2 w-full self-end">
+                <div className="flex flex-col gap-2 w-full self-start">
                   <p className="text-secondaryDark text-[0.9rem] font-semibold font-poppins">
                     {label}
                   </p>
@@ -127,9 +127,10 @@ const CustomInput: React.FC<CustomInputProps> = ({
             );
 
           case "text":
+          case "number":
           case "password":
             return (
-              <div className="flex flex-col gap-2 w-full self-end">
+              <div className="flex flex-col gap-2 w-full self-start">
                 <p className="text-secondaryDark text-[0.9rem] font-semibold font-poppins">
                   {label}
                 </p>
@@ -170,12 +171,14 @@ const CustomInput: React.FC<CustomInputProps> = ({
                       color: "#45133C",
                       padding: 2,
                       background: "#F1F3F6",
-                      borderRadius: "11px",
+
+                      paddingRight: "0px",
                     },
                     "& .MuiOutlinedInput-input": {
                       cursor: "text",
                       caretColor: "#A88652",
                       padding: 1.6,
+                      paddingRight: "0px",
                     },
                   }}
                 />
@@ -185,7 +188,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
           case "date":
             return (
               <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <div className="flex flex-col gap-2 self-end">
+                <div className="flex flex-col gap-2 self-start">
                   <p className="text-secondaryDark text-[0.9rem] font-semibold font-poppins">
                     {label}
                   </p>
@@ -243,7 +246,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
 
           case "dropdown":
             return (
-              <div className="flex flex-col gap-2 self-end">
+              <div className="flex flex-col gap-2 self-start">
                 <p className="text-secondaryDark text-[0.9rem] font-semibold font-poppins">
                   {label}
                 </p>
@@ -331,7 +334,9 @@ const CustomInput: React.FC<CustomInputProps> = ({
                     )}
                   />
                   {fieldState.error && (
-                    <p color="error">{fieldState.error.message}</p>
+                    <p className="MuiFormHelperText-root Mui-error MuiFormHelperText-sizeMedium MuiFormHelperText-contained css-er619e-MuiFormHelperText-root">
+                      {fieldState.error.message}
+                    </p>
                   )}
                 </FormControl>
               </div>

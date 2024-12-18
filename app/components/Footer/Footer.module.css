@@ -93,11 +93,11 @@
 
 .copyright {
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
   margin-top: 3rem;
   background-color: #eec575;
   color: #3f0c35;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {

@@ -10,6 +10,9 @@ import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import { useAuth } from "@/app/context/AuthContext";
 import { RegisterPayload } from "@/app/utils/types";
 import { useRouter } from "next/navigation";
+import { countries } from "../Form/options";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RegisterContainer = () => {
   const methods = useForm<RegisterPayload>({
@@ -31,10 +34,10 @@ const RegisterContainer = () => {
   const onSubmit = async (data: RegisterPayload) => {
     try {
       await register(data);
-      alert("Registration successful!");
+      toast.success("Registration successful!");
     } catch (error) {
       console.error("Registration Error:", error);
-      alert("Registration failed. Please try again.");
+      toast.error("Registration failed. Please try again.");
     }
   };
 
@@ -66,12 +69,18 @@ const RegisterContainer = () => {
             label="Username*"
             name="UserName"
             endAdornment={
-              <div className="h-[48px] -mr-4 w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
+              <div className="h-[48px]  w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
                 <AccountCircleOutlinedIcon />
               </div>
             }
             control={methods.control}
-            rules={{ required: "Username is required" }}
+            rules={{
+              required: "Username is required",
+              minLength: {
+                value: 3,
+                message: "Username must be at least 3 characters",
+              },
+            }}
           />
           <CustomInput
             type="text"
@@ -79,11 +88,17 @@ const RegisterContainer = () => {
             name="FirstName"
             control={methods.control}
             endAdornment={
-              <div className="h-[48px] -mr-4 w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
+              <div className="h-[48px]  w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
                 <AccountCircleOutlinedIcon />
               </div>
             }
-            rules={{ required: "First name is required" }}
+            rules={{
+              required: "First name is required",
+              pattern: {
+                value: /^[A-Za-z]+$/,
+                message: "First name must contain only letters",
+              },
+            }}
           />
           <CustomInput
             type="text"
@@ -91,18 +106,24 @@ const RegisterContainer = () => {
             name="LastName"
             control={methods.control}
             endAdornment={
-              <div className="h-[48px] -mr-4 w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
+              <div className="h-[48px]  w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
                 <AccountCircleOutlinedIcon />
               </div>
             }
-            rules={{ required: "Last name is required" }}
+            rules={{
+              required: "Last name is required",
+              pattern: {
+                value: /^[A-Za-z]+$/,
+                message: "Last name must contain only letters",
+              },
+            }}
           />
           <CustomInput
             type="text"
             label="E-Mail Address*"
             name="Email"
             endAdornment={
-              <div className="h-[48px] -mr-4 w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
+              <div className="h-[48px]  w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
                 <EmailOutlinedIcon />
               </div>
             }
@@ -116,25 +137,28 @@ const RegisterContainer = () => {
             }}
           />
           <CustomInput
-            type="text"
+            type="number"
             label="Mobile No.*"
             name="MobileNo"
             endAdornment={
-              <div className="h-[48px] -mr-4 w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
+              <div className="h-[48px]  w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
                 <PhoneAndroidOutlinedIcon />
               </div>
             }
             control={methods.control}
-            rules={{ required: "Mobile number is required" }}
+            rules={{
+              required: "Mobile number is required",
+              pattern: {
+                value: /^[0-9]{10}$/,
+                message: "Mobile number must be 10 digits",
+              },
+            }}
           />
           <CustomInput
             type="dropdown"
             label="Country*"
             name="Country"
-            options={[
-              { value: "India", label: "India" },
-              { value: "USA", label: "USA" },
-            ]}
+            options={countries}
             control={methods.control}
             rules={{ required: "Country is required" }}
           />
@@ -143,7 +167,7 @@ const RegisterContainer = () => {
             label="Password*"
             name="Password"
             endAdornment={
-              <div className="h-[48px] -mr-4 w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
+              <div className="h-[48px]  w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
                 <LockOutlinedIcon />
               </div>
             }
@@ -155,7 +179,7 @@ const RegisterContainer = () => {
             label="Confirm Password*"
             name="confirmPassword"
             endAdornment={
-              <div className="h-[48px] -mr-4 w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
+              <div className="h-[48px]  w-[60px] bg-secondaryDark rounded-r-[11px] text-white flex items-center justify-center">
                 <LockOutlinedIcon />
               </div>
             }
@@ -169,12 +193,14 @@ const RegisterContainer = () => {
           />
         </div>
 
-        <div className="w-full my-4">
-          {/* Add Recaptcha or other verification here */}
+        {/* <div className="w-full my-4">
+    
           <p className="text-[0.9rem] text-gray-500 text-center">
             Verification expired. Check the checkbox again.
           </p>
-        </div>
+        </div> */}
+
+        <ToastContainer />
 
         <Button
           type="submit"
@@ -186,7 +212,10 @@ const RegisterContainer = () => {
 
         <Link
           href="#"
-          className="text-[0.9rem] !text-secondaryDark !font-poppins !mt-4"
+          className="text-[0.9rem] !text-secondaryDark !font-poppins !mt-4 "
+          sx={{
+            textDecorationColor: "#a88652",
+          }}
           onClick={() => router.push("/login?active=sign-in")}
         >
           Have an account? Login

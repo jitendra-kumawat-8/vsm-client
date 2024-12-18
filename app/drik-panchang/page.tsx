@@ -3,7 +3,7 @@
 const DrikPanchangPage = () => {
   return (
     <div className="h-full font-vietnam text-secondaryLight p-10 px-20 pb-20 border-b-8 border-secondaryLight">
-      <h1 className="text-4xl  font-semibold text-center mb-10 uppercase">
+      <h1 className="text-[1.5rem]  font-semibold text-center mb-10 uppercase">
         Drik Panchanga
       </h1>
       <div className=" mx-auto">
@@ -13,10 +13,10 @@ const DrikPanchangPage = () => {
           className="w-full h-auto mb-16 object-cover"
         />
         <section className="mb-10 ">
-          <h2 className="text-[1.5rem] font-[500]  mb-6 pl-3 leading-[3.2rem] w-full pr-[400px] bg-gradient-to-r from-[#290523] to-[#45133C]">
+          <h2 className="text-[1.2rem] font-[500]  mb-6 pl-3 leading-[3.2rem] w-full pr-[400px] bg-gradient-to-r from-[#290523] to-[#45133C]">
             1. Basic Components of a Drik Panchanga:
           </h2>
-          <ul className="list-disc text-[1.3rem] pl-12 space-y-2">
+          <ul className="list-disc text-[1.2rem] pl-12 space-y-2">
             <li>
               <strong>Tithi:</strong> The lunar day. There are 30 Tithis in a
               lunar month, divided into Shukla Paksha (waxing phase) and Krishna
@@ -40,10 +40,10 @@ const DrikPanchangPage = () => {
           </ul>
         </section>
         <section className="mb-10">
-          <h2 className="text-[1.5rem] font-[500]  mb-6 pl-3 leading-[3.2rem] w-full pr-[400px] bg-gradient-to-r from-[#290523] to-[#45133C]">
+          <h2 className="text-[1.2rem] font-[500]  mb-6 pl-3 leading-[3.2rem] w-full pr-[400px] bg-gradient-to-r from-[#290523] to-[#45133C]">
             2. Importance of Drik Panchanga:
           </h2>
-          <ul className="list-disc text-[1.3rem] pl-12 space-y-2">
+          <ul className="list-disc text-[1.2rem] pl-12 space-y-2">
             <li>
               <strong>Determining Auspicious Days:</strong> Drik Panchanga is
               used to select Shubh Muhurta (auspicious time) for important
@@ -66,10 +66,10 @@ const DrikPanchangPage = () => {
           </ul>
         </section>
         <section>
-          <h2 className="text-[1.5rem] font-[500]  mb-6 pl-3 leading-[3.2rem] w-full pr-[400px] bg-gradient-to-r from-[#290523] to-[#45133C]">
+          <h2 className="text-[1.2rem] font-[500]  mb-6 pl-3 leading-[3.2rem] w-full pr-[400px] bg-gradient-to-r from-[#290523] to-[#45133C]">
             3. Calculation Methods:
           </h2>
-          <ul className="list-disc text-[1.3rem] pl-12 space-y-2">
+          <ul className="list-disc text-[1.2rem] pl-12 space-y-2">
             <li>
               <strong>Drik Siddhanta:</strong> Drik Panchanga uses precise
               astronomical calculations (Drik Siddhanta) to predict the

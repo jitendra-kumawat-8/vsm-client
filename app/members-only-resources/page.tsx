@@ -77,7 +77,7 @@ const MembersOnlyResources = () => {
     <AuthGuard>
       <div className="h-full  px-20 py-10 pb-16 border-b-8 border-secondaryLight font-vietnam">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-semibold text-center text-secondaryLight mb-12">
+          <h1 className="text-[1.5rem] font-semibold text-center text-secondaryLight mb-12">
             MEMBER ONLY RESOURCES
           </h1>
 
@@ -92,7 +92,7 @@ const MembersOnlyResources = () => {
                   onClick={() => toggleSection(resource.id)}
                   className="w-full py-2 px-4 flex justify-between items-center text-secondaryLight  bg-[#290523]"
                 >
-                  <span className="text-xl font-vietnam font-bold">
+                  <span className="text-[1.2rem] font-vietnam font-bold">
                     {resource.title}
                   </span>
                   {expandedSection === resource.id ? (

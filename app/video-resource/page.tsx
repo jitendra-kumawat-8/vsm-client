@@ -7,44 +7,44 @@ const MediaPage = () => {
     {
       id: 1,
       image: "/media/media1.svg",
-      title: "ANANT AMBANI & RADHIKA MERCHANT",
+      title: "Anant Ambani & Radhika Merchant",
       subtitle: "WEDDING: INSIDE THE GRAND CELEBRATION | AMBANI WEDDING",
     },
     {
       id: 2,
       image: "/media/media2.svg",
-      title: "ANANT AMBANI & RADHIKA MERCHANT",
-      subtitle: "WEDDING: INSIDE THE GRAND CELEBRATION | AMBANI WEDDING",
+      title: "Anant Ambani & Radhika Merchant",
+      subtitle: "Wedding: Inside the Grand Celebration | Ambani Wedding",
     },
     {
       id: 3,
       image: "/media/media3.svg",
-      title: "ANANT AMBANI & RADHIKA MERCHANT",
-      subtitle: "WEDDING: INSIDE THE GRAND CELEBRATION | AMBANI WEDDING",
+      title: "Anant Ambani & Radhika Merchant",
+      subtitle: "Wedding: Inside the Grand Celebration | Ambani Wedding",
     },
     {
       id: 4,
       image: "/media/media4.svg",
-      title: "ANANT AMBANI & RADHIKA MERCHANT",
-      subtitle: "WEDDING: INSIDE THE GRAND CELEBRATION | AMBANI WEDDING",
+      title: "Anant Ambani & Radhika Merchant",
+      subtitle: "Wedding: Inside the Grand Celebration | Ambani Wedding",
     },
     {
       id: 5,
       image: "/media/media5.svg",
-      title: "ANANT AMBANI & RADHIKA MERCHANT",
-      subtitle: "WEDDING: INSIDE THE GRAND CELEBRATION | AMBANI WEDDING",
+      title: "Anant Ambani & Radhika Merchant",
+      subtitle: "Wedding: Inside the Grand Celebration | Ambani Wedding",
     },
     {
       id: 6,
       image: "/media/media6.svg",
-      title: "ANANT AMBANI & RADHIKA MERCHANT",
-      subtitle: "WEDDING: INSIDE THE GRAND CELEBRATION | AMBANI WEDDING",
+      title: "Anant Ambani & Radhika Merchant",
+      subtitle: "Wedding: Inside the Grand Celebration | Ambani Wedding",
     },
   ];
 
   return (
     <div className="min-h-screen  px-28 py-10 pb-16 border-b-8 border-secondaryLight">
-      <h1 className="text-[2.2rem] font-semibold text-secondaryLight text-center mb-10">
+      <h1 className="text-[1.5rem] font-semibold text-secondaryLight text-center mb-10">
         VIDEOS
       </h1>
 
@@ -66,10 +66,10 @@ const MediaPage = () => {
                 </div>
               </div>
               <div>
-                <h2 className="text-white font-vietnam text-lg font-semibold text-left uppercase">
+                <h2 className="text-white font-vietnam text-lg font-semibold text-left ">
                   {item.title}
                 </h2>
-                <p className="text-white font-vietnam text-base font-light text-left uppercase">
+                <p className="text-white font-vietnam text-base font-light text-left ">
                   {item.subtitle}
                 </p>
               </div>

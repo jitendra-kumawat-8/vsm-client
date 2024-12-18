@@ -59,7 +59,7 @@ const MainHeader = () => {
               <a
                 href={route}
                 className={classNames(
-                  "text-[1.1rem] text-secondaryDark relative hover-underline font-vietnam font-normal uppercase",
+                  "text-[1rem] text-secondaryDark relative hover-underline font-vietnam font-normal uppercase",
                   { "active font-[600]": isActive },
                   { "font-[400]": !isActive }
                 )}
@@ -91,7 +91,7 @@ const ResourcesMenu = () => {
   const active = searchParams?.get("active");
 
   return (
-    <ul className="absolute top-8 left-0 hidden group-hover:block bg-white shadow-lg z-50 min-w-[200px]">
+    <ul className="absolute top-6 -left-1/2  hidden group-hover:block bg-white shadow-lg z-50 min-w-[200px]">
       <li>
         <Link
           href="/media"
@@ -194,7 +194,7 @@ const UserMenu = ({
   logout: () => void;
 }) => (
   <div className="group relative">
-    <span className="text-[1.1rem] text-secondaryDark hover-underline font-medium uppercase font-vietnam cursor-pointer">
+    <span className="text-[1rem] text-secondaryDark hover-underline font-medium uppercase font-vietnam cursor-pointer">
       {user.firstName + " " + user.lastName}
     </span>
     <ul className="absolute top-8 left-0 hidden group-hover:block bg-white shadow-lg z-50 min-w-[200px]">

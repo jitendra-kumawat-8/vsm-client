@@ -10,10 +10,10 @@ const Video1: React.FC<Video1Props> = ({ videoId }) => {
         Your br /owser does not support the video tag.
       </video>
       <div className="py-10 px-20 text-[#F2C78B] font-vietnam flex flex-col gap-10">
-        <h1 className="font-bold text-center text-[2rem] w-3/4 mx-auto">
-          Who is a Vedic Soulmate ? how do you find that special person ?
+        <h1 className="font-bold text-center text-[1.5rem] w-3/4 mx-auto">
+          Who is a Vedic Soulmate? how do you find that special person?
         </h1>
-        <p className="text-[1.5rem] font-regular">
+        <p className="text-[1.2rem] font-regular">
           In common understanding, a ‘soulmate’ typically means your ‘other
           half’ or your ‘missing piece’ - that somewhere out there is a perfect
           half who will ‘complete me once I find them’.
